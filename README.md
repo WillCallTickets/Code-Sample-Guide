@@ -76,6 +76,36 @@ exports.proxyResource = function(req, res, next) {
   request(decodedString).pipe(res);
 };
 ```
+#### further refactoring - use as a filter
+```
+angular.module('MyApp')
+  .filter('removeProtocol', function () {
+    return function (input) {
+      if (input) {
+        return input.replace(/^http:\/\//g, '')
+        .replace(/^https:\/\//g, '');
+      }
+    }
+  })
+  .filter('proxyResource', function () {
+    return function (input) {
+      if (input) {
+        var encoded = btoa(input);
+        return '/proxyresource/' + encoded;
+      }
+    }
+  })
+  .filter('trustMe', ['$sce', function($sce){
+    return function(input){
+      if(input){
+        return $sce.trustAsHtml(input);
+      }
+    }
+  }]);
+  ```
+
+
+
 
 ## REACT - Using Higher Order Components
 This construct really clicked for me recently. I am a big fan of using base classes in c# and I see many parallels to HOCs in React. I am looking forward to fleshing out this implementation  
