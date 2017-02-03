@@ -10,7 +10,7 @@
 [updating an invoice in the order flow](https://github.com/WillCallTickets/willcall/blob/master/server/controllers/store.js)  
 [using new Promise() - line 183](https://github.com/WillCallTickets/WillCall/blob/master/server/controllers/members.js)  
 [using angular's $q -  line 61](https://github.com/WillCallTickets/willcall/blob/master/public/js/models/showModel.js)  
-[Use of promses.all - line 50](https://github.com/WillCallTickets/WillCall/blob/master/lib/dbops/invoices.js) 
+[Use of promses.all - line 50](https://github.com/WillCallTickets/WillCall/blob/master/lib/dbops/invoices.js)   
 [Another example of promises.all - line 257](https://github.com/WillCallTickets/blazecast/blob/master/controllers/api.js)
 ```
 // line 257
