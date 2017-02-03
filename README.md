@@ -44,6 +44,13 @@ exports.getFedPodcastEpisodes = function(req, res, next){
 
 }
 ```
+## Recent project
+[REACT crud with Auth0 and react-router@v4](https://github.com/WillCallTickets/react-auth0-routerv4)  
+Currently a work-in-progress
+Built using code and concepts from [Rem Zolotykh](https://remzolotykh.net/crud-with-redux-01-application-and-redux-setup/)  
+Integration of Auth0 for social logins and user mgmt handling [Auth0](https://auth0.com/)   
+&nbsp;&nbsp; - refactored the Auth0 implementation to work with react-router@v4
+  
 
 ## Galvanize projects
 [Q2 group project - Cloak And Tagger](https://github.com/WillCallTickets/cloakandtagger)  
@@ -85,7 +92,7 @@ exports.proxyResource = function(req, res, next) {
   request(decodedString).pipe(res);
 };
 ```
-#### use as a filter to wrap the link
+##### use as a filter to wrap the link
 ```
 angular.module('MyApp')
   .filter('removeProtocol', function () {
@@ -149,9 +156,34 @@ Historically, my methodology for handling "this" was to be explicit when referen
             var sender = $('#' + selfId + ' .wct-modal-action');
             var errorDisplayElement = $('#' + selfId + ' .wctmodal-error');
             var successDisplayElement = $('#' + selfId + ' .wctmodal-success');
-
 ...
 ```
+##### More recently, I had an issue with "this", realized the mistake quickly and fixed it using the same pattern
+```
+// before 
+  login() {
+    this.lock.show({});
+    
+    return {
+      hide() {
+        this.lock.hide();
+      }
+    }
+  }
+  
+// after
+  login() {
+    let self = this;
+    this.lock.show({});
+    
+    return {
+      hide() {
+        self.lock.hide();
+      }
+    }
+  }
+```
+
 
 
 ## A c# "elegant" solution
