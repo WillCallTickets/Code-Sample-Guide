@@ -76,7 +76,7 @@ exports.proxyResource = function(req, res, next) {
   request(decodedString).pipe(res);
 };
 ```
-#### further refactoring - use as a filter
+#### use as a filter to wrap the link
 ```
 angular.module('MyApp')
   .filter('removeProtocol', function () {
