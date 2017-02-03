@@ -174,7 +174,7 @@ Historically, my methodology for handling "this" was to be explicit when referen
 // after
   login() {
     let self = this;
-    this.lock.show({});
+    self.lock.show({});
     
     return {
       hide() {
