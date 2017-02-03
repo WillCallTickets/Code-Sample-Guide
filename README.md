@@ -47,10 +47,19 @@ exports.getFedPodcastEpisodes = function(req, res, next){
 
 ## Galvanize projects
 [Q2 group project - Cloak And Tagger](https://github.com/WillCallTickets/cloakandtagger)  
+Team project highlighting a git centralized workflow  
+Utilized Google Maps, Microsoft Project Oxford, Cloudinary and oAuth Apis  
+  
 [Q3 group project - Blazecast](https://github.com/WillCallTickets/blazecast)  
+Built using Angularjs, social logins, JWTs, Audiosear.ch and iTunes search Apis  
+Team project emphasizing communication and git feature-branch workflow  
+  
 [Q4 solo "Capstone" project - WillCallTicketing](https://github.com/WillCallTickets/WillCall)  
-[WillCallTicketing - Live Link](https://willcalltickets.herokuapp.com/)
-
+[WillCallTicketing - Live Link](https://willcalltickets.herokuapp.com/)  
+Written with the NEAP stack – Node.js, Express, Angular and PostgreSql  
+Employed Stripe Connect Api to onboard members and reduce vetting concerns  
+Used Stripe Payments Api to instill customer confidence and eliminate PCI/DSS concerns § Business model underscores all-in-pricing, simplicity of member sign up and security  
+  
 
 ## A javascript "elegant" solution 
 handling http/https issues with loading static resources
