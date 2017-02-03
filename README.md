@@ -81,9 +81,9 @@ exports.proxyResource = function(req, res, next) {
 
 # A c# "elegant" solution
 
-*** It should be noted that the particlar ORM that I used, subsonic, created an active record pattern for interacting with the database ***
+*** the ORM that I used, subsonic, created an active record pattern for interacting with the database ***
 
-### [_Collection implementation using generics](https://github.com/WillCallTickets/Fox_2014/blob/master/Utils/_Collection.cs)
+[_Collection implementation using generics](https://github.com/WillCallTickets/Fox_2014/blob/master/Utils/_Collection.cs)
 
 * Solved the problem of having several tables/classes that needed to share the same functionality.  
 * Address the issue of managing collections that need to keep track of a user-defined ordering of rows. 
