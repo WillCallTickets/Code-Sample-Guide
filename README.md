@@ -112,6 +112,7 @@ angular.module('MyApp')
     }
   }]);
   
+  
   //usage
   
   // videogular only uses src and type attribs - normalize episode to source
