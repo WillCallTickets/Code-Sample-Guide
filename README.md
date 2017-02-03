@@ -9,48 +9,9 @@
 ## Promise examples
 [updating an invoice in the order flow](https://github.com/WillCallTickets/willcall/blob/master/server/controllers/store.js)  
 [using new Promise() - line 183](https://github.com/WillCallTickets/WillCall/blob/master/server/controllers/members.js)  
-[using angular's $q](https://github.com/WillCallTickets/willcall/blob/master/public/js/models/showModel.js)  
-[Use of promses.all](https://github.com/WillCallTickets/WillCall/blob/master/lib/dbops/invoices.js) 
- ```
- // line 50
- // construct an array of promises based upon the user's cart items - then insert in db
-
- .then(function(invoice_id){
-    
-    var _date = Date.now();
-    var unc = invoice_id + '_';
-    var itemPromises = [];
-    
-    cart.items.forEach(function(itm){
-      itemPromises.push(
-        knex('invoiceitems').insert({
-          invoice_id: invoice_id,
-          ticket_id: (itm.kind === 'ticket') ? itm.item.showdate_id: null,
-          product_id: (itm.kind === 'product') ? itm.item.productsku_id : null,
-          uniqueid: unc + _date++,
-          purchasename: purchaseEmail,
-          dtshowdate: (itm.kind === 'ticket') ? itm.item._parentShowDate.dateofshow: null,
-          name: itm.mainDesc,
-          ages: (itm.kind === 'ticket') ? itm.item.ages : '',
-          description: itm.secondaryDesc.reduce(function(prev,cur){return prev += ' ' + cur;},'').trim(),
-          price: itm.itemPrice,
-          quantity: itm.qty,
-          lineitemtotal: itm.itemPrice * itm.qty,
-          status: 'inprocess'
-        })
-      );
-    })
-    
-    return Promise.all(itemPromises);
-    })
-  .then(function(data){
-    // evaluate return data and return
-    return 'success';
-  });
- ```
-
-Another example
-[Use of promises.all](https://github.com/WillCallTickets/blazecast/blob/master/controllers/api.js)
+[using angular's $q -  line 61](https://github.com/WillCallTickets/willcall/blob/master/public/js/models/showModel.js)  
+[Use of promses.all - line 50](https://github.com/WillCallTickets/WillCall/blob/master/lib/dbops/invoices.js) 
+[Another example of promises.all - line 257](https://github.com/WillCallTickets/blazecast/blob/master/controllers/api.js)
 ```
 // line 257
 
