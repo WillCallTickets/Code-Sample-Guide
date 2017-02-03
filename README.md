@@ -77,24 +77,6 @@ exports.proxyResource = function(req, res, next) {
 };
 ```
 
-
-
-# A c# "elegant" solution
-
-*** the ORM that I used, subsonic, created an active record pattern for interacting with the database ***
-
-[_Collection implementation using generics](https://github.com/WillCallTickets/Fox_2014/blob/master/Utils/_Collection.cs)
-
-* Solved the problem of having several tables/classes that needed to share the same functionality.  
-* Address the issue of managing collections that need to keep track of a user-defined ordering of rows. 
-* [table example utilizing the iDisplayOrder column](https://github.com/WillCallTickets/Fox_SqlProgrammability/blob/master/Tables/dbo.JShowAct.Table.sql)
-* I was able to expand on this model and implement different sort orders based on "principal" ownership, allowing for multiple discrete entites to have their own sort-order over a shared table
-* This allowed me to decouple the manipulation layer (jquery ajax calls) from the storage layer (sql). 	
-* this enabled me to put all of the shared functionality into a single file for management of several tables  
-[PrincipalOrder.ashx](https://github.com/WillCallTickets/Fox_2014/blob/master/WcWeb/Admin/_customControls/PrincipalOrder.ashx)
-
-
-
 ## REACT - Using Higher Order Components
 This construct really clicked for me recently. I am a big fan of using base classes in c# and I see many parallels to HOCs in React. I am looking forward to fleshing out this implementation  
 [C# base class simplistic example] (https://github.com/WillCallTickets/Fox_2014/blob/master/Wcss/Derived/_ContextBase.cs)  
@@ -119,4 +101,18 @@ RE: "this" - In the past my methodology for handling "this" was to be explicit w
 ...
 ```
 
+
+## A c# "elegant" solution
+
+*** the ORM that I used, subsonic, created an active record pattern for interacting with the database ***
+
+[_Collection implementation using generics](https://github.com/WillCallTickets/Fox_2014/blob/master/Utils/_Collection.cs)
+
+* Solved the problem of having several tables/classes that needed to share the same functionality.  
+* Address the issue of managing collections that need to keep track of a user-defined ordering of rows. 
+* [Table example utilizing the iDisplayOrder column](https://github.com/WillCallTickets/Fox_SqlProgrammability/blob/master/Tables/dbo.JShowAct.Table.sql)
+* I was able to expand on this model and implement different sort orders based on "principal" ownership, allowing for multiple discrete entites to have their own sort-order over a shared table
+* This allowed me to decouple the manipulation layer (jquery ajax calls) from the storage layer (sql). 	
+* All of the shared functionality could be accessed from a single file for management of several tables  
+[PrincipalOrder.ashx](https://github.com/WillCallTickets/Fox_2014/blob/master/WcWeb/Admin/_customControls/PrincipalOrder.ashx)
 
