@@ -111,6 +111,17 @@ angular.module('MyApp')
       }
     }
   }]);
+  
+  //usage
+  
+  // videogular only uses src and type attribs - normalize episode to source
+  this.convertEpisodeToSource = function(episode){
+    var source = {};
+    source.src = $sce.trustAsResourceUrl(proxyResourceFilter(episode.audio_url));
+    source.type = episode.type;
+    return source;
+  };
+  
   ```
 
 
