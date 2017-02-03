@@ -3,7 +3,7 @@
 
 ## Express examples
 [WillCallTickets - Server.js](https://github.com/WillCallTickets/willcall/blob/master/server.js)  
-[Sample routing file](https://github.com/WillCallTickets/WillCall/blob/master/routes/stripe.js)
+[Example routing file](https://github.com/WillCallTickets/WillCall/blob/master/routes/stripe.js)
 
 
 ## Promise examples
