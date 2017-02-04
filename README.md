@@ -133,15 +133,6 @@ angular.module('MyApp')
   ```
 
 
-
-
-## REACT - Using Higher Order Components
-This construct really clicked for me recently. I am a big fan of using base classes in c# and I see many parallels to HOCs in React. I am looking forward to fleshing out this implementation  
-[C# base class example] (https://github.com/WillCallTickets/Fox_2014/blob/master/Wcss/Derived/_ContextBase.cs)  
-[React HOC simplistic example](https://github.com/WillCallTickets/react-auth0-routerv4/blob/master/src/containers/_baseContainer.js)  
-
-
-
 ## RE: "this"
 Historically, my methodology for handling "this" was to be explicit when referencing, defining it as "self" at the head of a function. My mantra here is "When there is a possibiliity of ambiguity - be specific".  
 ["this" reference example](https://github.com/WillCallTickets/Fox_2014/blob/master/Z2Web/assets/javascripts/z2ModalService.js)  
