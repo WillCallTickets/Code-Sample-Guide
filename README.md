@@ -183,6 +183,7 @@ Historically, my methodology for handling "this" was to be explicit when referen
 
 [_Collection implementation using generics](https://github.com/WillCallTickets/Fox_2014/blob/master/Utils/_Collection.cs)
 
+* The algorithm could certainly be refactored, but these collections were generally 2 - 20 members. The emphasis was on handling several different tables in a like manner.  
 * Solved the problem of having several tables/classes that needed to share the same functionality.  
 * Address the issue of managing collections that need to keep track of a user-defined ordering of rows. 
 * [Table example utilizing the iDisplayOrder column](https://github.com/WillCallTickets/Fox_SqlProgrammability/blob/master/Tables/dbo.JShowAct.Table.sql)
