@@ -68,6 +68,63 @@ Employed Stripe Connect Api to onboard members and reduce vetting concerns
 Used Stripe Payments Api to instill customer confidence and eliminate PCI/DSS concerns § Business model underscores all-in-pricing, simplicity of member sign up and security  
   
 
+## RE: "this"
+Historically, my methodology for handling "this" was to be explicit when referencing, defining it as "self" at the head of a function. My mantra here is "When there is a possibiliity of ambiguity - be specific".  
+["this" reference example](https://github.com/WillCallTickets/Fox_2014/blob/master/Z2Web/assets/javascripts/z2ModalService.js)  
+```
+...
+    $.fn.z2Modal = function (_fnHandlerPath, _fnSuccess, _inputs, _fnParamValidate) {  
+  
+        //ensure we are just dealing with a single element
+        var self = $(this).get(0);
+        if (self != undefined) {
+            var selfId = self.id;
+            var sender = $('#' + selfId + ' .wct-modal-action');
+            var errorDisplayElement = $('#' + selfId + ' .wctmodal-error');
+            var successDisplayElement = $('#' + selfId + ' .wctmodal-success');
+...
+```
+##### More recently, I had an issue with "this", realized the mistake quickly and fixed it using the same pattern
+```
+// before 
+  login() {
+    this.lock.show({});
+    
+    return {
+      hide() {
+        this.lock.hide();
+      }
+    }
+  }
+  
+// after
+  login() {
+    let self = this;
+    self.lock.show({});
+    
+    return {
+      hide() {
+        self.lock.hide();
+      }
+    }
+  }
+```
+#### Other ways to handle *this*
+.call([thisDeclaration], [explicitly listed arg], [explicitly listed arg], ...)  
+.apply([thisDeclaration], [array of args])  
+.bind([thisDeclaration])  
+someFunction.bind([thisDeclaration])  
+  
+   
+   
+In React, when using es6 classes, class methods are not auto-bound by default, *this* is undefined. There are a few methods to fix this issue:  
+1) bind in the element render - <button onClick={this.clickHandler.bind(this)}>
+2) bind in the constructor - this.clickHandler = this.clickHandler.bind(this); * **recommended** *
+3) use an arrow function in the render - <button onClick={(e) => this.clickHandler(e)}>
+4) Use React.createClass - binds this to the component automatically  
+5) Use arrow function in class property clickHandler = () => {...} - this requires some other setup but may become preferred in the future  
+  
+  
 ## A javascript "elegant" solution 
 handling http/https issues with loading static resources
 ```
@@ -131,51 +188,8 @@ angular.module('MyApp')
   };
   
   ```
-
-
-## RE: "this"
-Historically, my methodology for handling "this" was to be explicit when referencing, defining it as "self" at the head of a function. My mantra here is "When there is a possibiliity of ambiguity - be specific".  
-["this" reference example](https://github.com/WillCallTickets/Fox_2014/blob/master/Z2Web/assets/javascripts/z2ModalService.js)  
-```
-...
-    $.fn.z2Modal = function (_fnHandlerPath, _fnSuccess, _inputs, _fnParamValidate) {  
   
-        //ensure we are just dealing with a single element
-        var self = $(this).get(0);
-        if (self != undefined) {
-            var selfId = self.id;
-            var sender = $('#' + selfId + ' .wct-modal-action');
-            var errorDisplayElement = $('#' + selfId + ' .wctmodal-error');
-            var successDisplayElement = $('#' + selfId + ' .wctmodal-success');
-...
-```
-##### More recently, I had an issue with "this", realized the mistake quickly and fixed it using the same pattern
-```
-// before 
-  login() {
-    this.lock.show({});
-    
-    return {
-      hide() {
-        this.lock.hide();
-      }
-    }
-  }
   
-// after
-  login() {
-    let self = this;
-    self.lock.show({});
-    
-    return {
-      hide() {
-        self.lock.hide();
-      }
-    }
-  }
-```
-
-
 
 ## A c# "elegant" solution
 
