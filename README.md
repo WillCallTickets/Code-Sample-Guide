@@ -119,11 +119,11 @@ someFunction.bind([thisDeclaration])
    
    
 In React, when using es6 classes, class methods are not auto-bound by default, *this* is undefined. There are a few methods to fix this issue:  
-1) bind in the element render - <button onClick={this.clickHandler.bind(this)}>  
-2) bind in the constructor - this.clickHandler = this.clickHandler.bind(this); * **recommended** *  
-3) use an arrow function in the render - <button onClick={(e) => this.clickHandler(e)}>  
+1) bind in the element render - `<button onClick={this.clickHandler.bind(this)}>`  
+2) bind in the constructor - `this.clickHandler = this.clickHandler.bind(this);` * **recommended** *  
+3) use an arrow function in the render - `<button onClick={(e) => this.clickHandler(e)}>`  
 4) Use React.createClass - binds this to the component automatically  
-5) Use arrow function in class property clickHandler = () => {...} - this requires some other setup but may become preferred in the future  
+5) Use arrow function in class property `clickHandler = () => {...}` - this requires some other setup but may become preferred in the future  
   
   
 ## A javascript "elegant" solution 
